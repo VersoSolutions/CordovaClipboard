@@ -1,5 +1,5 @@
-CDVClipboard
-============
+Clipboard
+=========
 
 Clipboard management plugin for Cordova/PhoneGap.
 
