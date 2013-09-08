@@ -11,7 +11,7 @@ Notes:
 
 Install the plugin using the CLI, for instance with PhoneGap:
 
-	phonegap local plugin add https://github.com/ctrevisan/CDVClipboard
+	phonegap local plugin add https://github.com/VersoSolutions/CordovaClipboard
 
 The plugin creates the object `window.plugins.clipboard` with the methods `copy(text)` and `paste(callback)`.
 
