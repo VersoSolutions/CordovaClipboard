@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.verso.cordova.clipboard"
+    version="0.1.0">
+
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+
+    <name>Clipboard</name>
+
+    <description>Clipboard plugin for Cordova/PhoneGap >= 3.0.0</description>
+
+    <author>Verso Solutions LLC</author>
+
+    <keywords>clipboard,copy,paste</keywords>
+
+    <license>MIT</license>
+
+    <js-module src="www/clipboard.js" name="Clipboard">
+        <clobbers target="plugins.clipboard" />
+    </js-module>
+
+    <!-- iOS -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Clipboard">
+                <param name="ios-package" value="CDVClipboard" />
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/CDVClipboard.h" />
+        <source-file src="src/ios/CDVClipboard.m" />
+    </platform>
+
+</plugin>
