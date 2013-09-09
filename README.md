@@ -13,11 +13,11 @@ The plugin creates the object `window.plugins.clipboard` with the methods `copy(
 
 Example:
 
-	var data = "Hello World!";
+	var text = "Hello World!";
 
-	window.plugins.copy(data);
+	window.plugins.copy(text);
 
-	window.plugins.paste(function (data) { alert(data); });
+	window.plugins.paste(function (text) { alert(text); });
 
 ## Notes
 
