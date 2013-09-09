@@ -1,5 +1,5 @@
-CDVClipboard
-============
+Clipboard
+=========
 
 Clipboard management plugin for Cordova/PhoneGap that supports iOS, Android, and Windows Phone 8.
 
@@ -7,7 +7,7 @@ Clipboard management plugin for Cordova/PhoneGap that supports iOS, Android, and
 
 Install the plugin using the CLI, for instance with PhoneGap:
 
-	phonegap local plugin add https://github.com/ctrevisan/CDVClipboard
+	phonegap local plugin add https://github.com/VersoSolutions/CordovaClipboard
 
 The plugin creates the object `window.plugins.clipboard` with the methods `copy(text, onSuccess, onError)` and `paste(onSuccess, onError)`.
 
