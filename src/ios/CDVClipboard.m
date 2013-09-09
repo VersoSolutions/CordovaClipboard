@@ -11,6 +11,9 @@
 		NSString     *text       = [command.arguments objectAtIndex:0];
 
 		[pasteboard setValue:text forPasteboardType:@"public.text"];
+
+		CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:text];
+		[self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 	}];
 }
 
@@ -20,7 +23,6 @@
 		NSString     *text       = [pasteboard valueForPasteboardType:@"public.text"];
 	    
 	    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:text];
-
 	    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 	}];
 }

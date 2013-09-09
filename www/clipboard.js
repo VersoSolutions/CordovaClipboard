@@ -12,8 +12,8 @@ function Clipboard () {}
  *
  * @param {String} text The content to copy to the clipboard
  */
-Clipboard.prototype.copy = function (text) {
-	cordova.exec(null, null, "Clipboard", "copy", [text]);
+Clipboard.prototype.copy = function (text, onSuccess, onFail) {
+	cordova.exec(onSuccess, onFail, "Clipboard", "copy", [text]);
 }
 
 /**
@@ -21,8 +21,8 @@ Clipboard.prototype.copy = function (text) {
  *
  * @param {Function} callback The function to call with the result
  */
-Clipboard.prototype.paste = function (callback) {
-	cordova.exec(callback, null, "Clipboard", "paste", []);
+Clipboard.prototype.paste = function (onSuccess, onFail) {
+	cordova.exec(onSuccess, onFail, "Clipboard", "paste", []);
 }
 
 // Register the plugin

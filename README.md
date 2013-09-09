@@ -1,11 +1,7 @@
 CDVClipboard
 ============
 
-Clipboard management plugin for Cordova/PhoneGap.
-
-Notes:
-- The only supported platform at the moment is iOS.
-- The plugin can only be used with text content.
+Clipboard management plugin for Cordova/PhoneGap that supports iOS, Android, and Windows Phone 8.
 
 ## Usage
 
@@ -13,7 +9,7 @@ Install the plugin using the CLI, for instance with PhoneGap:
 
 	phonegap local plugin add https://github.com/ctrevisan/CDVClipboard
 
-The plugin creates the object `window.plugins.clipboard` with the methods `copy(text)` and `paste(callback)`.
+The plugin creates the object `window.plugins.clipboard` with the methods `copy(text, onSuccess, onError)` and `paste(onSuccess, onError)`.
 
 Example:
 
@@ -23,9 +19,23 @@ Example:
 
 	window.plugins.paste(function (data) { alert(data); });
 
+## Notes
+
+### All platforms
+
+- The plugin only works with text content.
+
+### Windows Phone
+
+- The Windows Phone platform doesn't allow applications to read the content of the clipboard. Using the `paste` method will return an error.
+
+### Android
+
+- The minimum supported API Level is 11. Make sure that `minSdkVersion` is larger or equal to 11 in `AndroidManifest.xml`.
+
 ## Acknowledgements
 
-This plugin is based on [ClipboardManagerPlugin](https://github.com/jacob/ClipboardManagerPlugin) (Android) and [ClipboardPlugin](https://github.com/phonegap/phonegap-plugins/tree/master/iPhone/ClipboardPlugin) (iOS).
+This plugin was inspired by [ClipboardManagerPlugin](https://github.com/jacob/ClipboardManagerPlugin) (Android) and [ClipboardPlugin](https://github.com/phonegap/phonegap-plugins/tree/master/iPhone/ClipboardPlugin) (iOS).
 
 ## License
 
