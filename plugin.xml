@@ -10,7 +10,7 @@
 
     <name>Clipboard</name>
 
-    <description>Clipboard plugin for Cordova/PhoneGap >= 3.0.0</description>
+    <description>Clipboard management plugin for Cordova/PhoneGap</description>
 
     <author>Verso Solutions LLC</author>
 
