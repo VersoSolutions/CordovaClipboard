@@ -15,6 +15,7 @@ function Clipboard () {}
  * @param {Function} onFail    The function to call in case of error
  */
 Clipboard.prototype.copy = function (text, onSuccess, onFail) {
+    if (typeof text === "undefined" || text === null) text = "";
 	cordova.exec(onSuccess, onFail, "Clipboard", "copy", [text]);
 }
 

@@ -14,9 +14,14 @@ namespace Cordova.Extension.Commands
             {
                 text = JsonHelper.Deserialize<string[]>(options)[0];
             }
-            catch { }
+            catch
+            {
+                DispatchCommandResult(new PluginResult(PluginResult.Status.JSON_EXCEPTION));
 
-            if (!string.IsNullOrEmpty(text))
+                return;
+            }
+
+            try
             {
                 System.Windows.Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
@@ -24,30 +29,30 @@ namespace Cordova.Extension.Commands
                 });
                 DispatchCommandResult(new PluginResult(PluginResult.Status.OK, text));
             }
-            else
+            catch
             {
-                DispatchCommandResult(new PluginResult(PluginResult.Status.JSON_EXCEPTION));
+                DispatchCommandResult(new PluginResult(PluginResult.Status.ERROR));
             }
+
         }
 
         public void paste(string options)
         {
             string text = "";
 
-            try
+            System.Windows.Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
-                text = System.Windows.Clipboard.GetText();
-            }
-            catch { }
+                try
+                {
+                    text = System.Windows.Clipboard.GetText();
 
-            if (!string.IsNullOrEmpty(text))
-            {
-                DispatchCommandResult(new PluginResult(PluginResult.Status.OK, text));
-            }
-            else
-            {
-                DispatchCommandResult(new PluginResult(PluginResult.Status.ERROR));
-            }
+                    DispatchCommandResult(new PluginResult(PluginResult.Status.OK, text));
+                }
+                catch
+                {
+                    DispatchCommandResult(new PluginResult(PluginResult.Status.ERROR));
+                }
+            });
         }
     }
 }
