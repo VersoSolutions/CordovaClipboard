@@ -15,9 +15,9 @@ Example:
 
 	var text = "Hello World!";
 
-	cordova.plugins.copy(text);
+	cordova.plugins.clipboard.copy(text);
 
-	cordova.plugins.paste(function (text) { alert(text); });
+	cordova.plugins.clipboard.paste(function (text) { alert(text); });
 
 ## Notes
 
