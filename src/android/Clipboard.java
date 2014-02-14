@@ -34,7 +34,7 @@ public class Clipboard extends CordovaPlugin {
             } catch (JSONException e) {
                 callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.JSON_EXCEPTION));
             } catch (Exception e) {
-                callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.ERROR));
+                callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.ERROR,e.toString()));
             }
         } else if (action.equals(actionPaste)) {
             if (!clipboard.getPrimaryClipDescription().hasMimeType(ClipDescription.MIMETYPE_TEXT_PLAIN)) {
@@ -43,7 +43,7 @@ public class Clipboard extends CordovaPlugin {
 
             try {
                 ClipData.Item item = clipboard.getPrimaryClip().getItemAt(0);
-                String text = (String) item.getText();
+                String text = item.getText().toString() ;
 
                 if (text == null) text = "";
 
@@ -51,7 +51,7 @@ public class Clipboard extends CordovaPlugin {
 
                 return true;
             } catch (Exception e) {
-                callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.ERROR));
+                callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.ERROR,e.toString()));
             }
         }
 
