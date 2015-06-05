@@ -1,0 +1,29 @@
+{
+  "name": "cordova-plugin-clipboard",
+  "version": "0.1.0",
+  "description": "Cordova Clipboard Plugin",
+  "cordova": {
+    "id": "cordova-plugin-clipboard",
+    "platforms": [
+      "ios",
+      "android",
+      "wp8"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:VersoSolutions/CordovaClipboard.git"
+  },
+  "keywords": [
+    "cordova",
+    "clipboard",
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android",
+    "cordova-wp8",
+    "cordova-windows8",
+    "cordova-windows"
+  ],
+  "author": "Verso Solutions LLC",
+  "license": "MIT"
+}
