@@ -58,7 +58,7 @@
 
     <!-- Windows uwp -->
     <platform name="windows">
-        <js-module src="src/windows/Clipboard.js" name="Clipboard">
+        <js-module src="src/windows/ClipboardProxy.js" name="ClipboardProxy">
             <merges target="" />
         </js-module>
     </platform>
