@@ -58,12 +58,8 @@
 
     <!-- Windows uwp -->
     <platform name="windows">
-        <config-file target="config.xml" parent="/*">
-            <feature name="Clipboard">
-                <param name="wp-package" value="Clipboard"/>
-            </feature>
-        </config-file>
-
-        <source-file src="src/windows/Clipboard.cs" />
+        <js-module src="src/windows/Clipboard.js" name="Clipboard">
+            <merges target="" />
+        </js-module>
     </platform>
 </plugin>
