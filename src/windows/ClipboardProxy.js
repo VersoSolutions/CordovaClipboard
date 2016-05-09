@@ -26,13 +26,13 @@ var cordova = require('cordova');
 
 module.exports = {
 
-    copy:function(options) {
+    copy:function(successCallback, errorCallback, args) {
         var text = "";
         try {
-            text = JSON.parse(options)[0];
+            text = args[0];
         }
         catch (e) {
-            //DispatchCommandResult(new PluginResult(PluginResult.Status.JSON_EXCEPTION));
+            errorCallback(e);
             return;
         }
        
@@ -40,13 +40,13 @@ module.exports = {
             var dataPackage = new Windows.ApplicationModel.DataTransfer.DataPackage();
             dataPackage.setText(text);
             Windows.ApplicationModel.DataTransfer.Clipboard.setContent(dataPackage);
-            //DispatchCommandResult(new PluginResult(PluginResult.Status.OK, text));
+            successCallback(text);
         }
         catch (e) {
-            //DispatchCommandResult(new PluginResult(PluginResult.Status.ERROR));
+            errorCallback(e);;
         }
     },
-    paste:function(options) {
+    paste:function(successCallback, errorCallback, args) {
       var text = "";
       
       try {
@@ -54,12 +54,12 @@ module.exports = {
         if (dataPackageView.contains(Windows.ApplicationModel.DataTransfer.StandardDataFormats.text)) {
             dataPackageView.getTextAsync().then(function (value) {
             text = value;
-            //DispatchCommandResult(new PluginResult(PluginResult.Status.OK, text));
+            successCallback(text);
           });
         }
       }
       catch (e) {
-            //DispatchCommandResult(new PluginResult(PluginResult.Status.ERROR));
+            errorCallback(e);;
         }
     }
 }; // exports
