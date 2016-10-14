@@ -1,0 +1,30 @@
+{
+  "name": "cordova-plugin-clipboard",
+  "version": "1.0.0",
+  "description": "Clipboard management plugin for Cordova/PhoneGap that supports iOS, Android, and WP8",
+  "cordova": {
+    "id": "cordova-plugin-clipboard",
+    "platforms": [
+      "android",
+      "ios",
+      "wp8"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ihadeed/cordova-plugin-clipboard.git"
+  },
+  "keywords": [
+    "cordova",
+    "plugin",
+    "clipboard",
+    "phonegap",
+    "ionic"
+  ],
+  "author": "Ibrahim Hadeed",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ihadeed/cordova-plugin-clipboard/issues"
+  },
+  "homepage": "https://github.com/ihadeed/cordova-plugin-clipboard#readme"
+}
