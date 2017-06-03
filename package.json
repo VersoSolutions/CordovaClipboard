@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/danielsogl/CordovaClipboard.git"
+    "url": "git+https://github.com/danielsogl/cordova-plugin-clipboard.git"
   },
   "keywords": [
     "Ionic",
@@ -23,7 +23,7 @@
   "author": "Daniel Sogl",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/danielsogl/CordovaClipboardissues"
+    "url": "https://github.com/danielsogl/cordova-plugin-clipboard"
   },
-  "homepage": "https://github.com/danielsogl/CordovaClipboard#readme"
+  "homepage": "https://github.com/danielsogl/cordova-plugin-clipboard#readme"
 }
