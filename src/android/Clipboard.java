@@ -1,4 +1,4 @@
-package com.verso.cordova.clipboard;
+package com.danielsogl.cordova.clipboard;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.PluginResult;
@@ -58,5 +58,3 @@ public class Clipboard extends CordovaPlugin {
         return false;
     }
 }
-
-
