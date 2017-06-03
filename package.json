@@ -5,10 +5,10 @@
   "cordova": {
     "id": "com.danielsogl.cordova.clipboard",
     "platforms": [
-      "android",
       "ios",
+      "android",
+      "wp8",
       "windows",
-      "wp8"      
     ]
   },
   "repository": {
@@ -25,12 +25,10 @@
     "cordova-wp8",
     "cordova-windows"
   ],
-  "engines": [
-    {
-      "name": "cordova",
-      "version": ">=4.0.0"
-    }
-  ],
+  "engines": [{
+    "name": "cordova",
+    "version": ">=4.0.0"
+  }],
   "author": "Daniel Sogl",
   "license": "MIT",
   "bugs": {
