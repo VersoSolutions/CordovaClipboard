@@ -1,5 +1,5 @@
 {
-  "name": "cordova-plugin-clipboard",
+  "name": "danielsogl-cordova-plugin-clipboard",
   "version": "1.0.0",
   "description": "Clipboard management plugin for Cordova/PhoneGap",
   "cordova": {
