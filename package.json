@@ -1,0 +1,40 @@
+{
+  "name": "danielsogl-cordova-plugin-clipboard",
+  "version": "1.0.2",
+  "description": "Clipboard management plugin for Cordova/PhoneGap",
+  "cordova": {
+    "id": "com.danielsogl.cordova.clipboard",
+    "platforms": [
+      "ios",
+      "android",
+      "wp8",
+      "windows"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielsogl/cordova-plugin-clipboard.git"
+  },
+  "keywords": [
+    "clipboard",
+    "copy",
+    "paste",
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android",
+    "cordova-wp8",
+    "cordova-windows"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=4.0.0"
+    }
+  ],
+  "author": "Daniel Sogl",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danielsogl/cordova-plugin-clipboard/issues"
+  },
+  "homepage": "https://github.com/danielsogl/cordova-plugin-clipboard#readme"
+}
