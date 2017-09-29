@@ -5,7 +5,7 @@
     version="1.0.0">
 
     <engines>
-        <engine name="cordova" version=">=3.0.0" />
+        <engine name="cordova" version=">=4.0.0" />
     </engines>
 
     <name>Clipboard</name>
@@ -56,4 +56,10 @@
         <source-file src="src/wp8/Clipboard.cs" />
     </platform>
 
+    <!-- Windows uwp -->
+    <platform name="windows">
+        <js-module src="src/windows/ClipboardProxy.js" name="ClipboardProxy">
+            <merges target="" />
+        </js-module>
+    </platform>
 </plugin>
