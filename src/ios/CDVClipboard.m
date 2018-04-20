@@ -27,4 +27,14 @@
 	}];
 }
 
+- (void)clear:(CDVInvokedUrlCommand*)command {
+	[self.commandDelegate runInBackground:^{
+		UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    	[pasteboard setValue:@"" forPasteboardType:UIPasteboardNameGeneral];
+	    
+	    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:true];
+	    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+	}];
+}
+
 @end

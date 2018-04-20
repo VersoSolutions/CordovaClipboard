@@ -2,7 +2,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="cordova-clipboard"
-    version="1.1.1">
+    version="1.2">
 
     <engines>
         <engine name="cordova" version=">=4.0.0" />
@@ -14,7 +14,7 @@
 
     <author>Verso Solutions LLC</author>
 
-    <keywords>clipboard,copy,paste</keywords>
+    <keywords>clipboard,copy,paste,clear</keywords>
 
     <license>MIT</license>
 

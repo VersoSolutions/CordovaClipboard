@@ -36,7 +36,7 @@ namespace Cordova.Extension.Commands
 
         }
 
-        public void paste(string options)
+        public void paste()
         {
             string text = "";
 
@@ -47,6 +47,22 @@ namespace Cordova.Extension.Commands
                     text = System.Windows.Clipboard.GetText();
 
                     DispatchCommandResult(new PluginResult(PluginResult.Status.OK, text));
+                }
+                catch
+                {
+                    DispatchCommandResult(new PluginResult(PluginResult.Status.ERROR));
+                }
+            });
+        }
+
+        public void clear()
+        {
+            System.Windows.Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                try
+                {
+                    System.Windows.Clipboard.Clear();
+                    DispatchCommandResult(new PluginResult(PluginResult.Status.OK, true));
                 }
                 catch
                 {

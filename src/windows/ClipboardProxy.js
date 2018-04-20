@@ -52,6 +52,15 @@ module.exports = {
         } catch (e) {
             errorCallback(e);;
         }
+    },
+    clear: function (successCallback, errorCallback, args) {
+        try {
+            if(Windows.ApplicationModel.DataTransfer.Clipboard.getContent()){
+                successCallback(true);
+            }
+        } catch (e) {
+            errorCallback(e);;
+        }
     }
 }; // exports
 

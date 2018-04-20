@@ -9,7 +9,7 @@ Clipboard management plugin for Cordova/PhoneGap that supports iOS, Android, and
 cordova plugin add cordova-clipboard
 ```
 
-The plugin creates the object `cordova.plugins.clipboard` with the methods `copy(text, onSuccess, onError)` and `paste(onSuccess, onError)`.
+The plugin creates the object `cordova.plugins.clipboard` with the methods `copy(text, onSuccess, onError)`, `paste(onSuccess, onError)` and `clear(onSuccess, onError)`
 
 Example:
 
@@ -18,6 +18,8 @@ Example:
 	cordova.plugins.clipboard.copy(text);
 
 	cordova.plugins.clipboard.paste(function (text) { alert(text); });
+
+	cordova.plugins.clipboard.clear();
 
 ## Notes
 
