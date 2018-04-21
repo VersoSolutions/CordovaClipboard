@@ -56,10 +56,10 @@ public class Clipboard extends CordovaPlugin {
             }
         } else if (action.equals(actionClear)) {
             try {
-                ClipData data = ClipData.newPlainText("", "");
-                clipBoard.setPrimaryClip(clip);
+                ClipData clip = ClipData.newPlainText("", "");
+                clipboard.setPrimaryClip(clip);
 
-                callbackContext.success(true);
+                callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK));
 
                 return true;
             } catch (Exception e) {
