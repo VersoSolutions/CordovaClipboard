@@ -38,16 +38,14 @@ public class Clipboard extends CordovaPlugin {
                 callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.ERROR, e.toString()));
             }
         } else if (action.equals(actionPaste)) {
-            if (!clipboard.getPrimaryClipDescription().hasMimeType(ClipDescription.MIMETYPE_TEXT_PLAIN)) {
-                callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.NO_RESULT));
-            }
-
             try {
-                ClipData.Item item = clipboard.getPrimaryClip().getItemAt(0);
-                String text = item.getText().toString();
-
-                if (text == null) text = "";
-
+                String text = "";
+                
+                ClipData clip = clipboard.getPrimaryClip();
+                if (clip != null) {
+                    ClipData.Item item = clip.getItemAt(0);
+                    text = item.getText().toString();
+                }
                 callbackContext.success(text);
 
                 return true;

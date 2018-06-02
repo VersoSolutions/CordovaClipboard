@@ -33,7 +33,19 @@
         <header-file src="src/ios/CDVClipboard.h" />
         <source-file src="src/ios/CDVClipboard.m" />
     </platform>
+    
+    <!-- OS X -->
+    <platform name="osx">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Clipboard">
+                <param name="ios-package" value="CDVClipboard" />
+            </feature>
+        </config-file>
 
+        <header-file src="src/osx/CDVClipboard.h" />
+        <source-file src="src/osx/CDVClipboard.m" />
+    </platform>
+    
     <!-- Android -->
     <platform name="android">
         <source-file src="src/android/Clipboard.java" target-dir="src/com/verso/cordova/clipboard" />

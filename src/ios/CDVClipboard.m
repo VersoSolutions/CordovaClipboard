@@ -21,7 +21,10 @@
 	[self.commandDelegate runInBackground:^{
 		UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
 		NSString     *text       = [pasteboard valueForPasteboardType:@"public.text"];
-	    
+	    if (text == nil) {
+            text = @"";
+        }
+
 	    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:text];
 	    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 	}];
