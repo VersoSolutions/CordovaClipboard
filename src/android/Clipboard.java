@@ -16,6 +16,7 @@ public class Clipboard extends CordovaPlugin {
 
     private static final String actionCopy = "copy";
     private static final String actionPaste = "paste";
+    private static final String actionClear = "clear";
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
@@ -37,17 +38,26 @@ public class Clipboard extends CordovaPlugin {
                 callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.ERROR, e.toString()));
             }
         } else if (action.equals(actionPaste)) {
-            if (!clipboard.getPrimaryClipDescription().hasMimeType(ClipDescription.MIMETYPE_TEXT_PLAIN)) {
-                callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.NO_RESULT));
-            }
-
             try {
-                ClipData.Item item = clipboard.getPrimaryClip().getItemAt(0);
-                String text = item.getText().toString();
-
-                if (text == null) text = "";
-
+                String text = "";
+                
+                ClipData clip = clipboard.getPrimaryClip();
+                if (clip != null) {
+                    ClipData.Item item = clip.getItemAt(0);
+                    text = item.getText().toString();
+                }
                 callbackContext.success(text);
+
+                return true;
+            } catch (Exception e) {
+                callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.ERROR, e.toString()));
+            }
+        } else if (action.equals(actionClear)) {
+            try {
+                ClipData clip = ClipData.newPlainText("", "");
+                clipboard.setPrimaryClip(clip);
+
+                callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK));
 
                 return true;
             } catch (Exception e) {
